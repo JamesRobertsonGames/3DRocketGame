@@ -1,0 +1,157 @@
+\hypertarget{class_game_model}{\section{Game\+Model Class Reference}
+\label{class_game_model}\index{Game\+Model@{Game\+Model}}
+}
+
+
+\hyperlink{class_game_model}{Game\+Model} Class.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Model.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_model_a93c7eafa927281cdb06a6aee39ab3d70}{\hyperlink{class_game_model_a93c7eafa927281cdb06a6aee39ab3d70}{Game\+Model} (std\+::string obj\+File\+Name)}\label{class_game_model_a93c7eafa927281cdb06a6aee39ab3d70}
+
+\begin{DoxyCompactList}\small\item\em Constructor calls Initialise\+V\+A\+O and Initialise\+Shaders. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a7cf6fff27a3de40c84244b08b8136a23}{void \hyperlink{class_game_model_a7cf6fff27a3de40c84244b08b8136a23}{Initialise\+V\+A\+O} ()}\label{class_game_model_a7cf6fff27a3de40c84244b08b8136a23}
+
+\begin{DoxyCompactList}\small\item\em Loads object model into Open\+G\+L. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a6e3b9a7dcddd4291c8aedc6977dc8827}{void \hyperlink{class_game_model_a6e3b9a7dcddd4291c8aedc6977dc8827}{Initialise\+Shaders} ()}\label{class_game_model_a6e3b9a7dcddd4291c8aedc6977dc8827}
+
+\begin{DoxyCompactList}\small\item\em Loads shaders for the object into Open\+G\+L. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a102fb1dfb4781b5a5e7ea8ce8b9d9add}{void \hyperlink{class_game_model_a102fb1dfb4781b5a5e7ea8ce8b9d9add}{Update} (float delta\+Ts)}\label{class_game_model_a102fb1dfb4781b5a5e7ea8ce8b9d9add}
+
+\begin{DoxyCompactList}\small\item\em Currently just updates rotation to make the model rotate. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a8932ce02575d6d95998525a3ffa9dc6f}{void \hyperlink{class_game_model_a8932ce02575d6d95998525a3ffa9dc6f}{Draw} (glm\+::mat4 \&view\+Matrix, glm\+::mat4 \&proj\+Matrix)}\label{class_game_model_a8932ce02575d6d95998525a3ffa9dc6f}
+
+\begin{DoxyCompactList}\small\item\em Draws object using the given camera view and projection matrices. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_adfa6b9496ae9d78ff322d4ba750aca47}{void \hyperlink{class_game_model_adfa6b9496ae9d78ff322d4ba750aca47}{Set\+Position} (float pos\+X, float pos\+Y, float pos\+Z)}\label{class_game_model_adfa6b9496ae9d78ff322d4ba750aca47}
+
+\begin{DoxyCompactList}\small\item\em For setting the position of the model. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_ad8c77740e4a18ef6fb584191fb301ec9}{void {\bfseries Set\+Rotation} (float pos\+X, float pos\+Y, float pos\+Z)}\label{class_game_model_ad8c77740e4a18ef6fb584191fb301ec9}
+
+\item 
+\hypertarget{class_game_model_ad0e31cce34ab2fab851e27ce854477da}{void {\bfseries Set\+Forward\+Velocity} (float velocity, float delta\+Time)}\label{class_game_model_ad0e31cce34ab2fab851e27ce854477da}
+
+\item 
+\hypertarget{class_game_model_a38656b1ab42c7da926a3c7c3be2d2325}{void {\bfseries Set\+Sideways\+Velocity} (float velocity, float delta\+Time)}\label{class_game_model_a38656b1ab42c7da926a3c7c3be2d2325}
+
+\item 
+\hypertarget{class_game_model_a086d667db88721ea349beb1faec779fa}{void {\bfseries Collision\+Check} (float Row\+X\+Position, float Width)}\label{class_game_model_a086d667db88721ea349beb1faec779fa}
+
+\item 
+\hypertarget{class_game_model_ae41ab3bff6bad9c5ca3bf54c3551c870}{void {\bfseries Check\+Collisions\+With\+Enviroment} ()}\label{class_game_model_ae41ab3bff6bad9c5ca3bf54c3551c870}
+
+\item 
+\hypertarget{class_game_model_ac979ed93ce29ad431756fd4106eb9487}{void {\bfseries Set\+Roll} (float angle, float delta\+Time)}\label{class_game_model_ac979ed93ce29ad431756fd4106eb9487}
+
+\item 
+\hypertarget{class_game_model_add476e729c34d68e82c2a05df8db76aa}{glm\+::vec3 {\bfseries Get\+Model\+Position} ()}\label{class_game_model_add476e729c34d68e82c2a05df8db76aa}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_game_model_a530abcf1f5251b0662a4776e6538291f}{\hyperlink{class_obj_loader}{Obj\+Loader} {\bfseries obj\+Loader}}\label{class_game_model_a530abcf1f5251b0662a4776e6538291f}
+
+\item 
+\hypertarget{class_game_model_aa88c7afe0baa3cca630888fddacbc598}{glm\+::vec3 \hyperlink{class_game_model_aa88c7afe0baa3cca630888fddacbc598}{\+\_\+position}}\label{class_game_model_aa88c7afe0baa3cca630888fddacbc598}
+
+\begin{DoxyCompactList}\small\item\em Object position vector. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a3eccfa0fa51b77085631d551290802a3}{glm\+::vec3 \hyperlink{class_game_model_a3eccfa0fa51b77085631d551290802a3}{\+\_\+rotation}}\label{class_game_model_a3eccfa0fa51b77085631d551290802a3}
+
+\begin{DoxyCompactList}\small\item\em Euler angles for rotation. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a110846c2dc3ccb6b8a315429d28971ec}{glm\+::vec3 {\bfseries row1\+Positions} \mbox{[}5\mbox{]}}\label{class_game_model_a110846c2dc3ccb6b8a315429d28971ec}
+
+\item 
+\hypertarget{class_game_model_a3bd83c15408aa09fb3b4edc3588114aa}{glm\+::vec3 {\bfseries row2\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a3bd83c15408aa09fb3b4edc3588114aa}
+
+\item 
+\hypertarget{class_game_model_a8b435acf29a641c193191975e5e1e2bc}{glm\+::vec3 {\bfseries row3\+Positions} \mbox{[}3\mbox{]}}\label{class_game_model_a8b435acf29a641c193191975e5e1e2bc}
+
+\item 
+\hypertarget{class_game_model_a743d3ca9d2c2cfb6a7ba49e6761d1da3}{glm\+::vec3 {\bfseries row4\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a743d3ca9d2c2cfb6a7ba49e6761d1da3}
+
+\item 
+\hypertarget{class_game_model_aa6d7873ead24b60e4878a82a7e0e929c}{glm\+::vec3 {\bfseries row5\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_aa6d7873ead24b60e4878a82a7e0e929c}
+
+\item 
+\hypertarget{class_game_model_a223f60c6f01326d53a53a8a74bdd3e5e}{glm\+::vec3 {\bfseries row6\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a223f60c6f01326d53a53a8a74bdd3e5e}
+
+\item 
+\hypertarget{class_game_model_adbf43443ec2abeae965907a32e932abe}{glm\+::vec3 {\bfseries row7\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_adbf43443ec2abeae965907a32e932abe}
+
+\item 
+\hypertarget{class_game_model_a1cbec592e25b7801073d9bc88d2ab473}{glm\+::vec3 {\bfseries row8\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a1cbec592e25b7801073d9bc88d2ab473}
+
+\item 
+\hypertarget{class_game_model_ad192bb5bbab755a2b448ef6a6da5e547}{glm\+::vec3 {\bfseries row9\+Positions} \mbox{[}1\mbox{]}}\label{class_game_model_ad192bb5bbab755a2b448ef6a6da5e547}
+
+\item 
+\hypertarget{class_game_model_a7b85e9d0f2852b6c80845dbf9421c0e9}{glm\+::vec3 {\bfseries row10\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a7b85e9d0f2852b6c80845dbf9421c0e9}
+
+\item 
+\hypertarget{class_game_model_a189c1fb5b69d7b99ec3250566e170255}{glm\+::vec3 {\bfseries row11\+Positions} \mbox{[}2\mbox{]}}\label{class_game_model_a189c1fb5b69d7b99ec3250566e170255}
+
+\item 
+\hypertarget{class_game_model_ac4c12765100ce0b41ab9da0e6c97d13c}{G\+Luint \hyperlink{class_game_model_ac4c12765100ce0b41ab9da0e6c97d13c}{\+\_\+\+V\+A\+O}}\label{class_game_model_ac4c12765100ce0b41ab9da0e6c97d13c}
+
+\begin{DoxyCompactList}\small\item\em Vertex Array Object for model in Open\+G\+L. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a06864c23597eb513f366865457247d3d}{G\+Luint \hyperlink{class_game_model_a06864c23597eb513f366865457247d3d}{\+\_\+program}}\label{class_game_model_a06864c23597eb513f366865457247d3d}
+
+\begin{DoxyCompactList}\small\item\em Shader program. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a2f74f4c5f639bcf15b8ee1338ed4a2c8}{G\+Lint \hyperlink{class_game_model_a2f74f4c5f639bcf15b8ee1338ed4a2c8}{\+\_\+shader\+Model\+Mat\+Location}}\label{class_game_model_a2f74f4c5f639bcf15b8ee1338ed4a2c8}
+
+\begin{DoxyCompactList}\small\item\em Uniform locations. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a3cf528072f39873007b43572ba367e61}{G\+Lint {\bfseries \+\_\+shader\+View\+Mat\+Location}}\label{class_game_model_a3cf528072f39873007b43572ba367e61}
+
+\item 
+\hypertarget{class_game_model_af4cf265c9809d07a5f0e5a0b6d5d0ecf}{G\+Lint {\bfseries \+\_\+shader\+Proj\+Mat\+Location}}\label{class_game_model_af4cf265c9809d07a5f0e5a0b6d5d0ecf}
+
+\item 
+glm\+::mat4 \hyperlink{class_game_model_a0196cbf5e8a2c20a5aed14f8d044b8e4}{\+\_\+model\+Matrix}
+\item 
+\hypertarget{class_game_model_acb85295329ba0dbbbbe39a22e904e0ad}{uint64\+\_\+t \hyperlink{class_game_model_acb85295329ba0dbbbbe39a22e904e0ad}{\+\_\+num\+Vertices}}\label{class_game_model_acb85295329ba0dbbbbe39a22e904e0ad}
+
+\begin{DoxyCompactList}\small\item\em Number of vertices in the model. \end{DoxyCompactList}\item 
+\hypertarget{class_game_model_a57ebb1fc7b73a46547db86f8dbd0252a}{uint16\+\_\+t {\bfseries number\+Of\+Tries} = 0}\label{class_game_model_a57ebb1fc7b73a46547db86f8dbd0252a}
+
+\item 
+\hypertarget{class_game_model_abbfb528fef068fa39d746edb95e1a796}{G\+Luint {\bfseries diffuse\+Tex\+I\+D}}\label{class_game_model_abbfb528fef068fa39d746edb95e1a796}
+
+\item 
+\hypertarget{class_game_model_ab9f2dd6924283e871d03f67f0d003381}{G\+Luint {\bfseries normal\+Tex\+I\+D}}\label{class_game_model_ab9f2dd6924283e871d03f67f0d003381}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_game_model}{Game\+Model} Class. 
+
+This class is to create and update the \hyperlink{class_game_model}{Game\+Model} \begin{DoxyAuthor}{Author}
+James Robertson 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0a 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2015 
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+G\+N\+U Public License.\+Class to store and display a model 
+\end{DoxyCopyright}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_game_model_a0196cbf5e8a2c20a5aed14f8d044b8e4}{\index{Game\+Model@{Game\+Model}!\+\_\+model\+Matrix@{\+\_\+model\+Matrix}}
+\index{\+\_\+model\+Matrix@{\+\_\+model\+Matrix}!Game\+Model@{Game\+Model}}
+\subsubsection[{\+\_\+model\+Matrix}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::mat4 Game\+Model\+::\+\_\+model\+Matrix\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_game_model_a0196cbf5e8a2c20a5aed14f8d044b8e4}
+Object's model matrix This is rebuilt in the update function 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+//bournemouth.\+ac.\+uk/data/student/home/\+D\+E\+C/i7291351/\+Desktop/\+Black\+Jack\+\_\+\+The\+\_\+\+Third/\+Failed Attempt One/pgg\+\_\+lab14/Game\+Model.\+h\item 
+//bournemouth.\+ac.\+uk/data/student/home/\+D\+E\+C/i7291351/\+Desktop/\+Black\+Jack\+\_\+\+The\+\_\+\+Third/\+Failed Attempt One/pgg\+\_\+lab14/Game\+Model.\+cpp\end{DoxyCompactItemize}
