@@ -9,7 +9,7 @@
 
 #pragma once
 
-#include <SDKS\SDL2-2.0.3\include\SDL.h>
+#include "SDKS\SDL2-2.0.3\include\SDL.h"
 #include <iostream>
 #include <glm.hpp>
 #include <gtc/matrix_transform.hpp>
