@@ -1,8 +1,9 @@
-﻿Build started 08/07/2015 10:04:31.
-     1>Project "F:\Final_Assignments\JamesRobertsonPGAG2\Program\Failed Attempt One\PGG_Lab14\PGG_Lab14.vcxproj" on node 2 (Build target(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.Cpp.Platform.targets(64,5): error MSB8020: The build tools for Visual Studio 2010 (Platform Toolset = 'v100') cannot be found. To build using the v100 build tools, please install Visual Studio 2010 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Upgrade Solution...".
-     1>Done Building Project "F:\Final_Assignments\JamesRobertsonPGAG2\Program\Failed Attempt One\PGG_Lab14\PGG_Lab14.vcxproj" (Build target(s)) -- FAILED.
-
-Build FAILED.
-
-Time Elapsed 00:00:00.00
+﻿  GameWorld.cpp
+GameWorld.cpp(21): warning C4316: 'Camera' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(112): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(113): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(224): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Generating code
+c:\users\jr3\documents\c\randomcode\3drocketgame\program\failed attempt one\pgg_lab14\gameworld.cpp(161): warning C4700: uninitialized local variable 'temp' used
+  Finished generating code
+  PGG_Lab14.vcxproj -> C:\Users\jr3\Documents\C\RandomCode\3DRocketGame\Program\Failed Attempt One\Release\PGG_Lab14.exe

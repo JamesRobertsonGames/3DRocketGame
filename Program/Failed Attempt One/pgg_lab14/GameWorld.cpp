@@ -211,7 +211,7 @@ void GameWorld::updateObjects()
 	playerRocket->SetRoll(spinAmount, deltaTime);
 
 	// DONT ROLL TERRAIN
-	Terrain->SetRoll(0, 0);
+	Terrain->SetRoll(spinAmount, deltaTime);
 
 	// Accelerate to MAX SPEED!
 	if (currentSpeed < MAX_SPEED)
@@ -233,6 +233,34 @@ void GameWorld::updateObjects()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
+// How many frames time values to keep
+// The higher the value the smoother the result is...
+// Don't make it 0 or less :)
+#define FRAME_VALUES 10
+
+// An array to store frame times:
+Uint32 frametimes[FRAME_VALUES];
+
+// Last calculated SDL_GetTicks
+Uint32 frametimelast;
+
+// total frames rendered
+Uint32 framecount;
+
+// the value you want
+float framespersecond;
+
+// This function gets called once on startup.
+void fpsinit() {
+
+	// Set all frame times to 0ms.
+	memset(frametimes, 0, sizeof(frametimes));
+	framecount = 0;
+	framespersecond = 0;
+	frametimelast = SDL_GetTicks();
+
+}
+
 void GameWorld::drawObjects()
 {
 	// Update the Camera
@@ -246,15 +274,13 @@ void GameWorld::drawObjects()
 	// Double Buffering Stuff Yes!
 	SDL_GL_SwapWindow(window);
 
-	// Limit to 60FPS
-	if (deltaTime < (1.0f / 120.0f))
-	{
-		SDL_Delay((unsigned int)(((1.0f / 120.0f) - deltaTime)*1000.0f));
-	}
+	fpsthink();
+	std::cout << "FPS: " << framespersecond << std::endl;
 }
 
 bool GameWorld::updateGame()
 {
+	fpsinit();
 	// While the game loop is going
 	while (go == true)
 	{
