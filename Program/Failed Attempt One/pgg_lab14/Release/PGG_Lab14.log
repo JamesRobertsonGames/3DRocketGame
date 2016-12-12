@@ -1,9 +1,11 @@
 ﻿  GameWorld.cpp
-GameWorld.cpp(21): warning C4316: 'Camera' : object allocated on the heap may not be aligned 16
-GameWorld.cpp(112): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
-GameWorld.cpp(113): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
-GameWorld.cpp(224): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+GameWorld.cpp(19): warning C4316: 'Camera' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(106): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(107): warning C4316: 'GameModel' : object allocated on the heap may not be aligned 16
+GameWorld.cpp(218): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+  Main.cpp
+  Menu.cpp
   Generating code
-c:\users\jr3\documents\c\randomcode\3drocketgame\program\failed attempt one\pgg_lab14\gameworld.cpp(161): warning C4700: uninitialized local variable 'temp' used
+c:\users\jr3\documents\c\randomcode\3drocketgame\program\failed attempt one\pgg_lab14\gameworld.cpp(155): warning C4700: uninitialized local variable 'temp' used
   Finished generating code
   PGG_Lab14.vcxproj -> C:\Users\jr3\Documents\C\RandomCode\3DRocketGame\Program\Failed Attempt One\Release\PGG_Lab14.exe

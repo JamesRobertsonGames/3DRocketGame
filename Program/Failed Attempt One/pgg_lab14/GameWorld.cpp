@@ -16,8 +16,6 @@ GameWorld::GameWorld()
 	renderer = nullptr;
 	glContext = NULL;
 
-	// Create new instances of these classes
-	xboxController = new Controller();
 	camera = new Camera();
 
 	// The game is looping
@@ -25,16 +23,12 @@ GameWorld::GameWorld()
 
 	// Initialise SDL - OpenGL - Scene
 	initialiseAll();
-
-	// Is the controller connected - Boolean
-	xboxControllerConnected = xboxController->isControllerConnected();
 }
 //---------------------------------------------------------120 limit right here----------------------------------------
 
 GameWorld::~GameWorld()
 {
 	// Delete Pointers!
-	delete xboxController;
 	delete camera;
 	delete playerRocket;
 	delete Terrain;
@@ -233,34 +227,6 @@ void GameWorld::updateObjects()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-// How many frames time values to keep
-// The higher the value the smoother the result is...
-// Don't make it 0 or less :)
-#define FRAME_VALUES 10
-
-// An array to store frame times:
-Uint32 frametimes[FRAME_VALUES];
-
-// Last calculated SDL_GetTicks
-Uint32 frametimelast;
-
-// total frames rendered
-Uint32 framecount;
-
-// the value you want
-float framespersecond;
-
-// This function gets called once on startup.
-void fpsinit() {
-
-	// Set all frame times to 0ms.
-	memset(frametimes, 0, sizeof(frametimes));
-	framecount = 0;
-	framespersecond = 0;
-	frametimelast = SDL_GetTicks();
-
-}
-
 void GameWorld::drawObjects()
 {
 	// Update the Camera
@@ -273,35 +239,22 @@ void GameWorld::drawObjects()
 
 	// Double Buffering Stuff Yes!
 	SDL_GL_SwapWindow(window);
-
-	fpsthink();
-	std::cout << "FPS: " << framespersecond << std::endl;
 }
 
 bool GameWorld::updateGame()
 {
-	fpsinit();
 	// While the game loop is going
 	while (go == true)
 	{
-		// Use Xbox Input if availible
-		if (xboxControllerConnected)
+		// Keyboard input 
+		while (SDL_PollEvent(&incomingEvent))
 		{
-			// Get Movement amount from controller
-			spinAmount += xboxController->movement();
+			keyInputHandler();
 		}
-		else
-		{
-			// Keyboard input 
-			while (SDL_PollEvent(&incomingEvent))
-			{
-				keyInputHandler();
-			}
-		}
-		
-		// Update and Draw the Objects
-		updateObjects();
-		drawObjects();
+	// Update and Draw the Objects
+	updateObjects();
+	drawObjects();
+
 	}
 	// Exit out
 	return false;

@@ -57,9 +57,6 @@ private:
 	GameModel* playerRocket;
 	GameModel* Terrain;
 
-	// Xbox Controller
-	Controller* xboxController;
-
 	// 3D Camera
 	Camera* camera;
 
