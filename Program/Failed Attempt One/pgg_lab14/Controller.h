@@ -9,4 +9,3 @@
 
 #pragma once
 #include <stdint.h>
-#include <SDL.h>
