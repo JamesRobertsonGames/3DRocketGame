@@ -67,20 +67,20 @@ private:
 	bool xboxControllerConnected;
 
 	// Timings
-	float deltaTime = 0.0f;
-	float spinAmount = 0.0f;
-	uint32_t lastTime = 0;
-	uint32_t current = 0;
+	float deltaTime;
+	float spinAmount;
+	uint32_t lastTime;
+	uint32_t current;
 
 	// Rocket Speed
-	const float MAX_SPINAMOUNT = 27.0f;
-	const float SPIN_ACCELERATION = 1.3f;
-	const float MAX_SPEED = 38.5f;
-	float currentSpeed = 0.0f;
+	const float MAX_SPINAMOUNT;
+	const float SPIN_ACCELERATION;
+	const float MAX_SPEED;
+	float currentSpeed;
 
 	// Window Specific Attributes
-	uint16_t winPosX = 360;
-	uint16_t winPosY = 100;
-	uint16_t winWidth = 1280;
-	uint16_t winHeight = 720;
+	uint16_t winPosX;
+	uint16_t winPosY;
+	uint16_t winWidth;
+	uint16_t winHeight;
 };
