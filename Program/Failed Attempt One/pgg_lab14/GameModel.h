@@ -8,7 +8,7 @@
 */
 
 #pragma once
-#include <glm.hpp>
+#include "SDKS/glm/glm.hpp"
 #include "SDKS/SDL2-2.0.3/include/SDL.h"
 #include <string>
 #include "glew.h"
