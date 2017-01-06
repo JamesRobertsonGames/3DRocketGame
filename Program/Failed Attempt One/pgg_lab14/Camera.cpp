@@ -26,20 +26,6 @@ void Camera::setAbsolutePosition(glm::vec3 Position)
 	cameraPosition = Position;
 }
 
-void Camera::followRocket(glm::vec3 RocketPosition)
-{
-	// Hold rocket position in temp (Better Performance)
-	glm::vec3 temp = RocketPosition;
-
-	// Load values with adjustment
-	temp.y = -3.25f;
-	temp.x = -RocketPosition.x;
-	temp.z = -RocketPosition.z - 6.5f;
-
-	// Store!
-	cameraPosition = temp;
-}
-
 void Camera::moveCamera(glm::vec3 Velocity)
 {
 	// Never Called! Was just in case :)

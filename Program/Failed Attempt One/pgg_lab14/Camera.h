@@ -21,7 +21,6 @@ public:
 
 	/// Position Setters
 	void setAbsolutePosition(glm::vec3 Position);
-	void followRocket(glm::vec3 RocketPosition);
 	void moveCamera(glm::vec3 Velocity);
 
 	/// Update Camera
