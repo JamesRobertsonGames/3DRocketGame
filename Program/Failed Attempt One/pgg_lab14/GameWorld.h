@@ -53,30 +53,17 @@ private:
 	SDL_GLContext glContext;
 	SDL_Event incomingEvent;
 
-	// Models
-	GameModel* playerRocket;
-	GameModel* Terrain;
-
 	// 3D Camera
 	Camera* camera;
 
 	// Boolean to keep the loop going
 	bool go;
 
-	// Store if the controller is connected
-	bool xboxControllerConnected;
-
 	// Timings
 	float deltaTime;
 	float spinAmount;
 	uint32_t lastTime;
 	uint32_t current;
-
-	// Rocket Speed
-	float MAX_SPINAMOUNT;
-	float SPIN_ACCELERATION;
-	float MAX_SPEED;
-	float currentSpeed;
 
 	// Window Specific Attributes
 	uint16_t winPosX;

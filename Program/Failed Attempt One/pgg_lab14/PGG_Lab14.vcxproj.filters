@@ -48,9 +48,6 @@
     <ClCompile Include="GameWorld.cpp">
       <Filter>Source Files\Game Items</Filter>
     </ClCompile>
-    <ClCompile Include="Menu.cpp">
-      <Filter>Source Files\Game Items</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -72,9 +69,6 @@
       <Filter>Header Files\Game Items</Filter>
     </ClInclude>
     <ClInclude Include="GameWorld.h">
-      <Filter>Header Files\Game Items</Filter>
-    </ClInclude>
-    <ClInclude Include="Menu.h">
       <Filter>Header Files\Game Items</Filter>
     </ClInclude>
     <ClInclude Include="glew.h">

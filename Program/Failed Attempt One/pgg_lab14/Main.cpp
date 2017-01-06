@@ -1,19 +1,10 @@
 #include "GameWorld.h"
-#include "Menu.h"
 
 int main(int, char**)
 {
-	// Initialise Menu
-	Menu* gameMenu = new Menu();
+	GameWorld *world = new GameWorld();
 
-	// Go to the Menu Input Handler
-	gameMenu->inputHandler();
-
-	// Go to Selected State
-	gameMenu->stateSelect();
-
-	// Delete Menu
-	delete gameMenu;
+	world->updateGame();
 
 	// Exit Game
 	return 0;

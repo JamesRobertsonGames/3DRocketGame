@@ -90,7 +90,6 @@
     <ClCompile Include="GameWorld.cpp" />
     <ClCompile Include="glew.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="ObjLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -99,7 +98,6 @@
     <ClInclude Include="GameModel.h" />
     <ClInclude Include="GameWorld.h" />
     <ClInclude Include="glew.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="ObjLoader.h" />
     <ClInclude Include="wglew.h" />
   </ItemGroup>

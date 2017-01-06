@@ -16,10 +16,6 @@ GameWorld::GameWorld()
 	winWidth = 1280;
 	winHeight = 720;
 
-	MAX_SPINAMOUNT = 27.0f;
-	SPIN_ACCELERATION = 1.3f;
-	MAX_SPEED = 38.5f;
-
 	// Initialise the Pointers to NULL
 	window = nullptr;
 	renderer = nullptr;
@@ -39,8 +35,6 @@ GameWorld::~GameWorld()
 {
 	// Delete Pointers!
 	delete camera;
-	delete playerRocket;
-	delete Terrain;
 	
 	// Destroy SDL Specific Stuff
 	SDL_DestroyRenderer(renderer);
@@ -76,7 +70,7 @@ void GameWorld::initialiseSDL()
 	// Creae a Window with that information
 	window = SDL_CreateWindow("Rocket Game that is unnamed so lol",
 			 winPosX, winPosY, winWidth, winHeight,
-			 SDL_WINDOW_SHOWN | SDL_WINDOW_FULLSCREEN_DESKTOP | SDL_WINDOW_OPENGL);
+			 SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 	// Make a Renderer
 	renderer = SDL_CreateRenderer(window, -1, 0);
@@ -111,16 +105,7 @@ bool GameWorld::initialiseOpenGL()
 
 void GameWorld::initialiseScene()
 {
-	// Setup Models
-	playerRocket = new GameModel("Rocket.obj");
-	Terrain = new GameModel("Level Final.obj");
-
-	// Position Terrain
-	Terrain->SetPosition(0, -15 ,-180);
-
-	// Set object's position like this:
-	playerRocket->SetPosition(0, 0, 0);
-	playerRocket->SetRotation(-1.57f, 0, 0);
+	// Initialise with GameObjects
 }
 
 void GameWorld::render2DImages(SDL_Texture* Image, SDL_Rect Location, bool Update)
@@ -183,12 +168,10 @@ void GameWorld::keyInputHandler()
 
 		// A - Spin Left
 		case SDLK_a:
-			spinAmount -= SPIN_ACCELERATION;
 			break;
 
 		// D - Spin Right
 		case SDLK_d:
-			spinAmount += SPIN_ACCELERATION;
 			break;
 		}
 		break;
@@ -204,31 +187,6 @@ void GameWorld::updateObjects()
 	// Now that we've done this we can use the current time as the next frame's previous time
 	lastTime = current;
 
-	// Limit Speed
-	if (spinAmount > MAX_SPINAMOUNT)
-		spinAmount = MAX_SPINAMOUNT - 0.10f;
-	if (spinAmount < -MAX_SPINAMOUNT)
-		spinAmount = -MAX_SPINAMOUNT + 0.10f;
-
-	// Update the model, to make it rotate
-	playerRocket->SetRoll(spinAmount, deltaTime);
-
-	// DONT ROLL TERRAIN
-	Terrain->SetRoll(0, 0);
-
-	// Accelerate to MAX SPEED!
-	if (currentSpeed < MAX_SPEED)
-	{
-		currentSpeed += 0.1f;
-	}
-
-	// Send the Velocity to the Rocket!
-	playerRocket->SetForwardVelocity(currentSpeed, deltaTime);
-	playerRocket->SetSidewaysVelocity((-spinAmount / 1.3f), deltaTime);
-
-	// Set the camera to follow the Rocket
-	camera->followRocket(playerRocket->GetModelPosition());
-
 	// Specify the colour to clear the framebuffer to
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
@@ -240,11 +198,6 @@ void GameWorld::drawObjects()
 {
 	// Update the Camera
 	camera->update();
-
-	// Update the Objects
-	playerRocket->CheckCollisionsWithEnviroment();
-	playerRocket->Draw(camera->getView(), camera->getProjection());
-	Terrain->Draw(camera->getView(), camera->getProjection());
 
 	// Double Buffering Stuff Yes!
 	SDL_GL_SwapWindow(window);
@@ -269,7 +222,6 @@ bool GameWorld::updateGame()
 	// Update and Draw the Objects
 	updateObjects();
 	drawObjects();
-
 	}
 	// Exit out
 	return false;
