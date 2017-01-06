@@ -214,7 +214,7 @@ void GameWorld::updateObjects()
 	playerRocket->SetRoll(spinAmount, deltaTime);
 
 	// DONT ROLL TERRAIN
-	Terrain->SetRoll(spinAmount, deltaTime);
+	Terrain->SetRoll(0, 0);
 
 	// Accelerate to MAX SPEED!
 	if (currentSpeed < MAX_SPEED)
@@ -248,6 +248,12 @@ void GameWorld::drawObjects()
 
 	// Double Buffering Stuff Yes!
 	SDL_GL_SwapWindow(window);
+
+	// Limit to 60FPS
+	if (deltaTime < (1.0f / 60.0f))
+	{
+		SDL_Delay((unsigned int)(((1.0f / 60.0f) - deltaTime)*1000.0f));
+	}
 }
 
 bool GameWorld::updateGame()

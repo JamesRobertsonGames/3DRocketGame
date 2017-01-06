@@ -1,11 +1,4 @@
-﻿  Camera.cpp
-  Controller.cpp
-  GameModel.cpp
-  GameWorld.cpp
-  glew.cpp
-  Main.cpp
-  Menu.cpp
-  ObjLoader.cpp
+﻿  GameWorld.cpp
   Generating code
   Finished generating code
   PGG_Lab14.vcxproj -> C:\Users\jr3\Documents\C\RandomCode\3DRocketGame\Program\Failed Attempt One\Release\PGG_Lab14.exe
