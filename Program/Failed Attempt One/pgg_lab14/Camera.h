@@ -12,7 +12,7 @@
 #include "SDKS/glm/gtc/matrix_transform.hpp"
 
 
-class Camera
+__declspec(align(16)) class Camera
 {
 public:
 	/// Constructor and Destructor
@@ -30,6 +30,16 @@ public:
 	/// Get Projection and View
 	glm::mat4 getProjection() { return projection; }
 	glm::mat4 getView() { return view; }
+
+	void* operator new(size_t i)
+	{
+		return _mm_malloc(i, 16);
+	}
+
+		void operator delete(void* p)
+	{
+		_mm_free(p);
+	}
 
 private:
 	glm::vec3 cameraPosition;

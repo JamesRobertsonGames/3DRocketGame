@@ -73,9 +73,9 @@ private:
 	uint32_t current;
 
 	// Rocket Speed
-	const float MAX_SPINAMOUNT;
-	const float SPIN_ACCELERATION;
-	const float MAX_SPEED;
+	float MAX_SPINAMOUNT;
+	float SPIN_ACCELERATION;
+	float MAX_SPEED;
 	float currentSpeed;
 
 	// Window Specific Attributes

@@ -109,6 +109,9 @@ GameModel::GameModel(std::string objFileName)
 GameModel::~GameModel()
 {
 	// TODO: destroy VAO, shaders etc
+	glDeleteVertexArrays(1, &_VAO);
+	glDeleteBuffers(1, &positionBuffer);
+	glDeleteShader(_program);
 }
 
 void GameModel::InitialiseVAO()

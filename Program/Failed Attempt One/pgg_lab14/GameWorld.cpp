@@ -11,6 +11,15 @@
 
 GameWorld::GameWorld()
 {
+	winPosX = 360;
+	winPosY = 100;
+	winWidth = 1280;
+	winHeight = 720;
+
+	MAX_SPINAMOUNT = 27.0f;
+	SPIN_ACCELERATION = 1.3f;
+	MAX_SPEED = 38.5f;
+
 	// Initialise the Pointers to NULL
 	window = nullptr;
 	renderer = nullptr;
@@ -131,7 +140,7 @@ void GameWorld::render2DImages(SDL_Texture* Image, SDL_Rect Location, bool Updat
 
 SDL_Texture* GameWorld::createImage(std::string filename)
 {
-	SDL_Texture* temp;
+	SDL_Texture* temp = nullptr;
 	
 	// Set the file to the surface
 	surface = SDL_LoadBMP(filename.c_str());
@@ -215,7 +224,7 @@ void GameWorld::updateObjects()
 
 	// Send the Velocity to the Rocket!
 	playerRocket->SetForwardVelocity(currentSpeed, deltaTime);
-	playerRocket->SetSidewaysVelocity((-spinAmount / 1.3), deltaTime);
+	playerRocket->SetSidewaysVelocity((-spinAmount / 1.3f), deltaTime);
 
 	// Set the camera to follow the Rocket
 	camera->followRocket(playerRocket->GetModelPosition());

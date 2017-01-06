@@ -15,7 +15,7 @@
 #include "ObjLoader.h"
 
 /// Class to store and display a model
-class GameModel
+__declspec(align(16)) class GameModel
 {
 public:
 
@@ -51,6 +51,16 @@ public:
 	void SetRoll(float angle, float deltaTime);
 
 	glm::vec3 GetModelPosition() {	return _position; }
+
+	void* operator new(size_t i)
+	{
+		return _mm_malloc(i, 16);
+	}
+
+		void operator delete(void* p)
+	{
+		_mm_free(p);
+	}
 
 protected:
 
@@ -88,9 +98,8 @@ protected:
 	glm::mat4 _modelMatrix;
 
 	/// Number of vertices in the model
-	uint64_t _numVertices;
+	GLsizei _numVertices;
 	uint16_t numberOfTries = 0;
-
 
 	GLuint diffuseTexID;
 	GLuint normalTexID;

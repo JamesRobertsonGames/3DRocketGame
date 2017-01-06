@@ -77,10 +77,10 @@ void ObjLoader::ReadObjFileData(FILE* objFile) {
 				splits.push_back(split);
 
 			std::vector<FaceVertexData> tmpFaceVerts;
-			for (int i = 0; i < splits.size(); i++)
+			for (size_t i = 0; i < splits.size(); i++)
 				tmpFaceVerts.push_back(ExtractFaceVertexData(splits[i]));
 
-			int i = 0;
+			size_t i = 0;
 			do {
 				faceVerts.push_back(tmpFaceVerts[0]);
 				faceVerts.push_back(tmpFaceVerts[i + 1]);
@@ -96,7 +96,7 @@ void ObjLoader::ReadObjFileData(FILE* objFile) {
 
 void ObjLoader::BuildMeshVertAndNormalLists() {
 
-	for (int i = 0; i < faceVerts.size(); i++) {
+	for (size_t i = 0; i < faceVerts.size(); i++) {
 		//the ith vnp in the std::vector
 		FaceVertexData* vnp = &faceVerts[i];
 
@@ -127,7 +127,7 @@ FaceVertexData ObjLoader::ExtractFaceVertexData(std::string& s) {
 	int slashPos[2];
 	int slashCount = 0;
 
-	for (int i = 0; i < s.size(); i++) {
+	for (size_t i = 0; i < s.size(); i++) {
 		if (s[i] == '/') {
 			slashPos[slashCount] = i;
 			slashCount++;
