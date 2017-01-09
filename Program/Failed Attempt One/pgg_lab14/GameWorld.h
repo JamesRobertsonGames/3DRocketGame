@@ -59,15 +59,20 @@ private:
 	// Boolean to keep the loop going
 	bool go;
 
-	// Timings
-	float deltaTime;
-	float spinAmount;
-	uint32_t lastTime;
-	uint32_t current;
+	struct worldTime
+	{
+		// Timings
+		float deltaTime;
+		uint32_t lastTime;
+		uint32_t current;
+	} timings;
 
-	// Window Specific Attributes
-	uint16_t winPosX;
-	uint16_t winPosY;
-	uint16_t winWidth;
-	uint16_t winHeight;
+	struct windowCoords
+	{
+		// Window Specific Attributes
+		uint16_t x;
+		uint16_t y;
+		uint16_t pixelWidth;
+		uint16_t pixelHeight;
+	} programWindow;
 };

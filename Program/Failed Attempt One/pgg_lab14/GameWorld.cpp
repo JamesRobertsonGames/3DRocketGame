@@ -11,10 +11,10 @@
 
 GameWorld::GameWorld()
 {
-	winPosX = 360;
-	winPosY = 100;
-	winWidth = 1280;
-	winHeight = 720;
+	programWindow.x = 20;
+	programWindow.y = 40;
+	programWindow.pixelWidth = 960;
+	programWindow.pixelHeight = 540;
 
 	// Initialise the Pointers to NULL
 	window = nullptr;
@@ -68,8 +68,8 @@ void GameWorld::initialiseSDL()
 	SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 24);
 
 	// Creae a Window with that information
-	window = SDL_CreateWindow("Rocket Game that is unnamed so lol",
-			 winPosX, winPosY, winWidth, winHeight,
+	window = SDL_CreateWindow("Template 3D Window",
+			 programWindow.x, programWindow.y, programWindow.pixelWidth, programWindow.pixelHeight,
 			 SDL_WINDOW_SHOWN | SDL_WINDOW_RESIZABLE | SDL_WINDOW_OPENGL);
 
 	// Make a Renderer
@@ -77,7 +77,7 @@ void GameWorld::initialiseSDL()
 	glContext = SDL_GL_CreateContext(window);
 
 	// Get Ticks
-	lastTime = SDL_GetTicks();
+	timings.lastTime = SDL_GetTicks();
 }
 
 bool GameWorld::initialiseOpenGL()
@@ -181,11 +181,11 @@ void GameWorld::keyInputHandler()
 void GameWorld::updateObjects()
 {
 	// Update our world
-	current = SDL_GetTicks();
-	deltaTime = (float)(current - lastTime) / 1000.0f;
+	timings.current = SDL_GetTicks();
+	timings.deltaTime = (float)(timings.current - timings.lastTime) / 1000.0f;
 
 	// Now that we've done this we can use the current time as the next frame's previous time
-	lastTime = current;
+	timings.lastTime = timings.current;
 
 	// Specify the colour to clear the framebuffer to
 	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
@@ -203,9 +203,9 @@ void GameWorld::drawObjects()
 	SDL_GL_SwapWindow(window);
 
 	// Limit to 60FPS
-	if (deltaTime < (1.0f / 60.0f))
+	if (timings.deltaTime < (1.0f / 60.0f))
 	{
-		SDL_Delay((unsigned int)(((1.0f / 60.0f) - deltaTime)*1000.0f));
+		SDL_Delay((unsigned int)(((1.0f / 60.0f) - timings.deltaTime)*1000.0f));
 	}
 }
 

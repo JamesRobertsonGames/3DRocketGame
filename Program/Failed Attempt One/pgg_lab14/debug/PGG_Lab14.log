@@ -1,3 +1,2 @@
-﻿  Main.cpp
-MSVCRTD.lib(cinitexe.obj) : warning LNK4098: defaultlib 'msvcrt.lib' conflicts with use of other libs; use /NODEFAULTLIB:library
+﻿  GameWorld.cpp
   PGG_Lab14.vcxproj -> C:\Users\jr3\Documents\C\RandomCode\3DRocketGame\Program\Failed Attempt One\Debug\PGG_Lab14.exe
