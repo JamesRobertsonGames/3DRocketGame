@@ -29,7 +29,7 @@ GameWorld::GameWorld()
 	// Initialise SDL - OpenGL - Scene
 	initialiseAll();
 }
-//---------------------------------------------------------120 limit right here----------------------------------------
+//-----------------------------------------------------------------------------------------------------------------
 
 GameWorld::~GameWorld()
 {
@@ -166,11 +166,15 @@ void GameWorld::keyInputHandler()
 			go = false;
 			break;
 
-		// A - Spin Left
 		case SDLK_a:
 			break;
+		
+		case SDLK_a:
+			break
 
-		// D - Spin Right
+		case SDLK_s:
+			break;
+
 		case SDLK_d:
 			break;
 		}
@@ -212,7 +216,7 @@ void GameWorld::drawObjects()
 bool GameWorld::updateGame()
 {
 	// While the game loop is going
-	while (go == true)
+	while (go)
 	{
 		// Keyboard input 
 		while (SDL_PollEvent(&incomingEvent))
